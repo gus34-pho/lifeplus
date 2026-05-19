@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "badge": "🌿 NDIS Registered Provider",
+    "title": "Support that empowers your journey",
+    "titleItalic": "empowers",
+    "subtitle": "Life Plus Support Services delivers compassionate, person-centred disability support across South Australia — helping you live the life you choose.",
+    "stat1Number": "200+",
+    "stat1Label": "Participants Supported",
+    "stat2Number": "98%",
+    "stat2Label": "Satisfaction Rate",
+    "stat3Number": "24/7",
+    "stat3Label": "Support Available"
+  },
+  "services": [
+    { "icon": "🏠", "title": "Daily Living Support", "description": "Assistance with everyday activities including personal care, meal preparation, household tasks, and community access." },
+    { "icon": "🌍", "title": "Community Participation", "description": "Supporting you to engage with your community, pursue hobbies, attend events, and build meaningful social connections." },
+    { "icon": "🧩", "title": "Support Coordination", "description": "Expert help navigating the NDIS, connecting you with the right services, and making the most of your plan funding." },
+    { "icon": "💼", "title": "Supported Employment", "description": "Helping you find and maintain meaningful employment through tailored support, skill building, and workplace assistance." },
+    { "icon": "🧘", "title": "Therapeutic Supports", "description": "Coordinated allied health services including OT, speech therapy, and psychology to meet your clinical goals." },
+    { "icon": "🏡", "title": "Supported Independent Living", "description": "SIL options to help you live as independently as possible, in your own home or shared accommodation." }
+  ],
+  "contact": {
+    "phone": "(08) XXXX XXXX",
+    "email": "info@lifeplusss.com.au",
+    "address": "Adelaide, SA",
+    "hours": "Mon–Sat 9am–5pm ACST",
+    "abn": "XX XXX XXX XXX"
+  },
+  "chatbot": {
+    "name": "Lila",
+    "prompt": "You are Lila, the friendly AI assistant for Life Plus Support Services — an NDIS registered disability support provider based in Adelaide, South Australia.\n\nYou help website visitors understand:\n- NDIS (National Disability Insurance Scheme) — how it works, eligibility, plans, and funding categories\n- Life Plus services: Daily Living Support, Community Participation, Support Coordination, Supported Employment, Therapeutic Supports, Supported Independent Living (SIL)\n- How to get started with Life Plus\n- General disability support questions\n\nAlways be warm, compassionate, clear, and encouraging. Keep responses concise (2–4 short paragraphs). If someone asks a medical or legal question, suggest they speak with a qualified professional. If they want to book or speak to the team, encourage them to use the booking form or call us."
+  }
+}

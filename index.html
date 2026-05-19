@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Life Plus Support Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#1A3E6E;--green-light:#E8F0FB;--green-mid:#1E4D8C;--green-pale:#EEF4FF;
+  --warm:#F7F8FC;--text:#1A1A1A;--muted:#5A5A5A;--border:#DDE3EE;
+  --accent:#F26A1B;--white:#FFFFFF;
+}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:300}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--green);letter-spacing:-0.01em}
+.nav-logo span{color:var(--accent);font-style:italic}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.875rem;transition:color 0.2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:white;border:none;padding:0.6rem 1.4rem;border-radius:100px;font-size:0.875rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.2s}
+.nav-cta:hover{background:var(--green-mid)}
+
+.hero{background:var(--warm);min-height:90vh;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:center;padding:5rem 2.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-120px;top:-80px;width:550px;height:550px;border-radius:50%;background:var(--green-light);opacity:0.6}
+.hero-text{position:relative;z-index:1;max-width:520px}
+.hero-badge{display:inline-block;background:var(--green-light);color:var(--green);font-size:0.78rem;font-weight:500;padding:0.35rem 0.9rem;border-radius:100px;margin-bottom:1.5rem;letter-spacing:0.02em}
+.hero h1{font-size:3.4rem;line-height:1.12;color:var(--green);margin-bottom:1.2rem;font-weight:300}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p{font-size:1.05rem;line-height:1.7;color:var(--muted);margin-bottom:2rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--green);color:white;border:none;padding:0.85rem 1.8rem;border-radius:100px;font-size:0.9rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.btn-primary:hover{background:var(--green-mid);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--green);border:1.5px solid var(--green);padding:0.85rem 1.8rem;border-radius:100px;font-size:0.9rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s}
+.btn-secondary:hover{background:var(--green-light)}
+.hero-image{position:relative;z-index:1;display:flex;align-items:center;justify-content:center}
+.hero-card{background:white;border-radius:20px;padding:2rem;box-shadow:0 20px 60px rgba(27,94,66,0.12);max-width:320px;width:100%}
+.hero-card-icon{width:48px;height:48px;border-radius:12px;background:var(--green-light);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.5rem}
+.hero-card h3{font-size:1rem;margin-bottom:0.4rem;color:var(--green)}
+.hero-card p{font-size:0.85rem;color:var(--muted);line-height:1.5}
+.hero-stat{display:flex;gap:1rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.stat{text-align:center;flex:1}
+.stat-num{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--green);font-weight:600}
+.stat-label{font-size:0.72rem;color:var(--muted);margin-top:0.2rem}
+
+section{padding:5rem 2.5rem}
+.section-tag{font-size:0.78rem;color:var(--green);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.8rem}
+.section-title{font-size:2.4rem;color:var(--green);line-height:1.2;margin-bottom:1rem}
+.section-sub{font-size:1rem;color:var(--muted);line-height:1.7;max-width:560px}
+
+.services{background:var(--green-pale)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.service-card{background:white;border-radius:16px;padding:1.8rem;border:1px solid var(--border);transition:all 0.25s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(27,94,66,0.1);border-color:var(--green)}
+.service-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.2rem}
+.service-card h3{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--green);margin-bottom:0.5rem;font-weight:400}
+.service-card p{font-size:0.875rem;color:var(--muted);line-height:1.6}
+
+.process{background:var(--warm)}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.step{text-align:center;padding:1.5rem}
+.step-num{width:44px;height:44px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:1.1rem;margin:0 auto 1rem}
+.step h4{font-family:'Fraunces',serif;font-size:1rem;color:var(--green);margin-bottom:0.4rem;font-weight:400}
+.step p{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+.forms-section{background:white}
+.forms-tabs{display:flex;gap:0.5rem;margin:1.5rem 0 2rem}
+.tab-btn{padding:0.6rem 1.4rem;border-radius:100px;border:1.5px solid var(--border);background:transparent;font-family:'DM Sans',sans-serif;font-size:0.875rem;cursor:pointer;color:var(--muted);transition:all 0.2s}
+.tab-btn.active{background:var(--green);color:white;border-color:var(--green)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.form-info h3{font-size:1.8rem;color:var(--green);margin-bottom:0.8rem}
+.form-info p{font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.form-info ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.form-info ul li{font-size:0.875rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem}
+.form-info ul li::before{content:'✓';color:var(--green);font-weight:600}
+form{background:var(--warm);border-radius:16px;padding:2rem;border:1px solid var(--border)}
+.form-group{margin-bottom:1.2rem}
+.form-group label{display:block;font-size:0.8rem;font-weight:500;color:var(--text);margin-bottom:0.4rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.75rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.875rem;background:white;color:var(--text);outline:none;transition:border-color 0.2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green)}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.submit-btn{width:100%;background:var(--green);color:white;border:none;padding:0.9rem;border-radius:100px;font-size:0.9rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;transition:all 0.2s;margin-top:0.5rem}
+.submit-btn:hover{background:var(--green-mid)}
+.submit-btn:disabled{opacity:0.6;cursor:not-allowed}
+.success-msg{display:none;background:var(--green-light);color:var(--green);padding:1rem;border-radius:10px;font-size:0.875rem;margin-top:1rem;text-align:center;font-weight:500}
+.error-msg{display:none;background:#FEE8E8;color:#C0392B;padding:1rem;border-radius:10px;font-size:0.875rem;margin-top:1rem;text-align:center}
+
+.chatbot-section{background:var(--green-pale)}
+.chat-container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2rem}
+.chat-window{background:white;border-radius:20px;border:1px solid var(--border);overflow:hidden;box-shadow:0 8px 30px rgba(27,94,66,0.08)}
+.chat-header{background:var(--green);padding:1rem 1.5rem;display:flex;align-items:center;gap:0.75rem}
+.chat-avatar{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.chat-header-info{flex:1}
+.chat-header-name{color:white;font-weight:500;font-size:0.95rem}
+.chat-header-status{color:rgba(255,255,255,0.7);font-size:0.75rem}
+.chat-online{width:8px;height:8px;border-radius:50%;background:#4ade80;display:inline-block;margin-right:4px}
+.messages{height:320px;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;gap:0.75rem;scroll-behavior:smooth}
+.msg{max-width:82%;padding:0.7rem 1rem;border-radius:14px;font-size:0.875rem;line-height:1.55;word-wrap:break-word}
+.msg-bot{background:var(--green-pale);color:var(--text);align-self:flex-start;border-bottom-left-radius:4px}
+.msg-user{background:var(--green);color:white;align-self:flex-end;border-bottom-right-radius:4px}
+.typing-indicator{background:var(--green-pale);align-self:flex-start;padding:0.7rem 1rem;border-radius:14px;border-bottom-left-radius:4px;display:none}
+.typing-dots{display:flex;gap:4px;align-items:center}
+.typing-dots span{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:bounce 1.2s infinite}
+.typing-dots span:nth-child(2){animation-delay:0.2s}
+.typing-dots span:nth-child(3){animation-delay:0.4s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.chat-input-area{display:flex;gap:0.5rem;padding:0.75rem 1rem;border-top:1px solid var(--border);background:white}
+.chat-input{flex:1;border:1.5px solid var(--border);border-radius:100px;padding:0.6rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;outline:none;transition:border-color 0.2s}
+.chat-input:focus{border-color:var(--green)}
+.chat-send{background:var(--green);color:white;border:none;border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1rem;transition:background 0.2s;flex-shrink:0}
+.chat-send:hover{background:var(--green-mid)}
+.quick-questions{display:flex;flex-direction:column;gap:0.5rem;padding:0.6rem 1rem 0.8rem;border-top:1px solid var(--border)}
+.quick-q{background:var(--green-pale);border:1px solid var(--border);border-radius:100px;padding:0.4rem 0.9rem;font-size:0.78rem;color:var(--green);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;text-align:left}
+.quick-q:hover{background:var(--green-light);border-color:var(--green)}
+.chat-info{padding-top:1rem}
+.chat-info h3{font-size:1.7rem;color:var(--green);margin-bottom:0.8rem}
+.chat-info p{font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.chat-features{display:flex;flex-direction:column;gap:0.75rem}
+.chat-feat{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.875rem;color:var(--muted)}
+.chat-feat-icon{width:34px;height:34px;border-radius:8px;background:var(--green-light);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+
+footer{background:var(--green);color:white;padding:4rem 2.5rem 2rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand h2{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:300;margin-bottom:0.75rem}
+.footer-brand p{font-size:0.85rem;line-height:1.7;opacity:0.75;max-width:280px}
+.footer-col h4{font-size:0.78rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;opacity:0.6;margin-bottom:1rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.footer-col ul li{font-size:0.875rem;opacity:0.8}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.15);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:0.8rem;opacity:0.6}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="/logo.jpeg" alt="Life Plus Support Services"/></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#chat">AI Assistant</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('booking-tab-btn').click();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">🌿 NDIS Registered Provider</div>
+    <h1>Support that <em>empowers</em> your journey</h1>
+    <p>Life Plus Support Services delivers compassionate, person-centred disability support across South Australia — helping you live the life you choose.</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="document.getElementById('booking-tab-btn').click();document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Consultation</button>
+      <button class="btn-secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-card">
+      <div class="hero-card-icon">🤝</div>
+      <h3>Personalised Care Plans</h3>
+      <p>Every support plan is tailored to your unique goals, needs, and aspirations — with you at the centre.</p>
+      <div class="hero-stat">
+        <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Participants Supported</div></div>
+        <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Satisfaction Rate</div></div>
+        <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Support Available</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-tag">What We Offer</div>
+  <h2 class="section-title">NDIS Support Services</h2>
+  <p class="section-sub">We provide a wide range of supports to help you achieve your goals and live independently.</p>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-icon" style="background:#E8F5EF">🏠</div><h3>Daily Living Support</h3><p>Assistance with everyday activities including personal care, meal preparation, household tasks, and community access.</p></div>
+    <div class="service-card"><div class="service-icon" style="background:#FFF3E0">🌍</div><h3>Community Participation</h3><p>Supporting you to engage with your community, pursue hobbies, attend events, and build meaningful social connections.</p></div>
+    <div class="service-card"><div class="service-icon" style="background:#E8EEF5">🧩</div><h3>Support Coordination</h3><p>Expert help navigating the NDIS, connecting you with the right services, and making the most of your plan funding.</p></div>
+    <div class="service-card"><div class="service-icon" style="background:#F5E8F0">💼</div><h3>Supported Employment</h3><p>Helping you find and maintain meaningful employment through tailored support, skill building, and workplace assistance.</p></div>
+    <div class="service-card"><div class="service-icon" style="background:#E8F5EF">🧘</div><h3>Therapeutic Supports</h3><p>Coordinated allied health services including OT, speech therapy, and psychology to meet your clinical goals.</p></div>
+    <div class="service-card"><div class="service-icon" style="background:#FFF8E1">🏡</div><h3>Supported Independent Living</h3><p>SIL options to help you live as independently as possible, in your own home or shared accommodation.</p></div>
+  </div>
+</section>
+
+<section class="process" id="how-it-works">
+  <div class="section-tag">Getting Started</div>
+  <h2 class="section-title">How it works</h2>
+  <p class="section-sub">Starting your journey with us is simple. We're with you every step of the way.</p>
+  <div class="process-steps">
+    <div class="step"><div class="step-num">1</div><h4>Initial Consultation</h4><p>Book a free consultation to talk through your needs, goals, and NDIS plan.</p></div>
+    <div class="step"><div class="step-num">2</div><h4>Your Support Plan</h4><p>We create a personalised support plan aligned with your NDIS goals and funding.</p></div>
+    <div class="step"><div class="step-num">3</div><h4>Match Your Team</h4><p>We carefully match you with qualified, compassionate support workers.</p></div>
+    <div class="step"><div class="step-num">4</div><h4>Ongoing Support</h4><p>Regular check-ins to review progress and adjust your plan as your needs evolve.</p></div>
+  </div>
+</section>
+
+<section class="forms-section" id="contact">
+  <div class="section-tag">Get In Touch</div>
+  <h2 class="section-title">Contact &amp; Bookings</h2>
+  <div class="forms-tabs">
+    <button class="tab-btn active" id="contact-tab-btn" onclick="switchTab('contact',this)">📩 Send Enquiry</button>
+    <button class="tab-btn" id="booking-tab-btn" onclick="switchTab('booking',this)">📅 Book Consultation</button>
+  </div>
+
+  <div class="tab-content active" id="tab-contact">
+    <div class="form-grid">
+      <div class="form-info">
+        <h3>We'd love to hear from you</h3>
+        <p>Whether you're a participant, family member, or referrer — reach out and our team will respond within one business day.</p>
+        <ul>
+          <li>Free initial consultation</li>
+          <li>NDIS plan assistance available</li>
+          <li>Multilingual support workers</li>
+          <li>Adelaide &amp; surrounds coverage</li>
+        </ul>
+      </div>
+      <form id="contact-form" onsubmit="submitContact(event)">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="c-fname" placeholder="Jane" required/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="c-lname" placeholder="Smith" required/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="c-email" placeholder="jane@email.com" required/></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" id="c-phone" placeholder="04XX XXX XXX"/></div>
+        <div class="form-group"><label>I am a...</label><select id="c-role" required><option value="">Select one</option><option>NDIS Participant</option><option>Family Member / Carer</option><option>Support Coordinator</option><option>Healthcare Referrer</option><option>Other</option></select></div>
+        <div class="form-group"><label>How can we help?</label><textarea id="c-msg" placeholder="Tell us about your situation and what support you're looking for..."></textarea></div>
+        <button type="submit" class="submit-btn" id="c-btn">Send Enquiry →</button>
+        <div class="success-msg" id="contact-success">✅ Thank you! We'll be in touch within one business day.</div>
+        <div class="error-msg" id="contact-error">❌ Something went wrong. Please try again or call us directly.</div>
+      </form>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tab-booking">
+    <div class="form-grid">
+      <div class="form-info">
+        <h3>Book a free consultation</h3>
+        <p>Speak with one of our experienced coordinators about how Life Plus can support your NDIS goals. No obligation — just a friendly conversation.</p>
+        <ul>
+          <li>30–45 minute session</li>
+          <li>In-person, phone, or video</li>
+          <li>Bring your NDIS plan if you have one</li>
+          <li>Available Mon–Sat, 9am–5pm ACST</li>
+        </ul>
+      </div>
+      <form id="booking-form" onsubmit="submitBooking(event)">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="b-fname" placeholder="Jane" required/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="b-lname" placeholder="Smith" required/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="b-email" placeholder="jane@email.com" required/></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" id="b-phone" placeholder="04XX XXX XXX" required/></div>
+        <div class="form-row">
+          <div class="form-group"><label>Preferred Date</label><input type="date" id="b-date" required/></div>
+          <div class="form-group"><label>Preferred Time</label><select id="b-time" required><option value="">Select time</option><option>9:00 AM</option><option>10:00 AM</option><option>11:00 AM</option><option>1:00 PM</option><option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option></select></div>
+        </div>
+        <div class="form-group"><label>Meeting Format</label><select id="b-format" required><option value="">Select format</option><option>In-Person (Adelaide)</option><option>Phone Call</option><option>Video Call (Zoom/Teams)</option></select></div>
+        <div class="form-group"><label>Service Interested In</label><select id="b-service"><option value="">Select (optional)</option><option>Daily Living Support</option><option>Support Coordination</option><option>Community Participation</option><option>Supported Employment</option><option>SIL</option><option>Multiple Services</option></select></div>
+        <button type="submit" class="submit-btn" id="b-btn">Confirm Booking →</button>
+        <div class="success-msg" id="booking-success">✅ Booking received! You'll get a confirmation email shortly.</div>
+        <div class="error-msg" id="booking-error">❌ Something went wrong. Please try again or call us directly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="chatbot-section" id="chat">
+  <div class="section-tag">AI Support Assistant</div>
+  <h2 class="section-title">Ask Lila anything</h2>
+  <p class="section-sub">Our AI assistant is available 24/7 to answer your NDIS questions, explain our services, and help you get started.</p>
+  <div class="chat-container">
+    <div>
+      <div class="chat-window">
+        <div class="chat-header">
+          <div class="chat-avatar">🌿</div>
+          <div class="chat-header-info">
+            <div class="chat-header-name">Lila — Life Plus Assistant</div>
+            <div class="chat-header-status"><span class="chat-online"></span>Online 24/7</div>
+          </div>
+        </div>
+        <div class="messages" id="messages">
+          <div class="msg msg-bot">👋 Hi! I'm Lila, the Life Plus Support Services AI assistant. I can answer questions about NDIS, our services, eligibility, and how to get started. How can I help you today?</div>
+        </div>
+        <div class="typing-indicator" id="typing">
+          <div class="typing-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="quick-questions">
+          <button class="quick-q" onclick="askQuestion('What services do you offer?')">What services do you offer?</button>
+          <button class="quick-q" onclick="askQuestion('How do I become an NDIS participant?')">How do I become an NDIS participant?</button>
+          <button class="quick-q" onclick="askQuestion('How do I get started with Life Plus?')">How do I get started with Life Plus?</button>
+        </div>
+        <div class="chat-input-area">
+          <input class="chat-input" id="chat-input" type="text" placeholder="Ask me anything about NDIS or our services..." onkeydown="if(event.key==='Enter')sendMessage()"/>
+          <button class="chat-send" onclick="sendMessage()">➤</button>
+        </div>
+      </div>
+    </div>
+    <div class="chat-info">
+      <h3>Always here when you need us</h3>
+      <p>Lila uses advanced AI to give you accurate, helpful answers about disability support — any time of day or night.</p>
+      <div class="chat-features">
+        <div class="chat-feat"><div class="chat-feat-icon">🧠</div><div><strong>NDIS expertise</strong> — Questions about plans, funding, eligibility and more answered instantly.</div></div>
+        <div class="chat-feat"><div class="chat-feat-icon">📋</div><div><strong>Service guidance</strong> — Learn which of our supports best match your goals and needs.</div></div>
+        <div class="chat-feat"><div class="chat-feat-icon">🔒</div><div><strong>Safe &amp; confidential</strong> — Your conversation is private and never stored beyond this session.</div></div>
+        <div class="chat-feat"><div class="chat-feat-icon">📞</div><div><strong>Seamless handoff</strong> — Lila can connect you directly with our team for complex questions.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/logo.jpeg" alt="Life Plus Support Services" style="height:60px;margin-bottom:0.75rem"/>
+      <p>Compassionate, person-centred NDIS disability support for people across South Australia. Registered NDIS provider.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul><li>Daily Living Support</li><li>Community Participation</li><li>Support Coordination</li><li>Supported Employment</li><li>SIL</li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul><li>📍 Adelaide, SA</li><li>📞 (08) XXXX XXXX</li><li>📧 info@lifeplusss.com.au</li><li>Mon–Sat 9am–5pm ACST</li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Life Plus Support Services. All rights reserved.</span>
+    <span>NDIS Registered Provider · ABN XX XXX XXX XXX</span>
+  </div>
+</footer>
+
+<script>
+// ─── Tab switching ───────────────────────────────────────
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ─── Contact form ────────────────────────────────────────
+async function submitContact(e) {
+  e.preventDefault();
+  const btn = document.getElementById('c-btn');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  document.getElementById('contact-error').style.display = 'none';
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: document.getElementById('c-fname').value,
+        lastName:  document.getElementById('c-lname').value,
+        email:     document.getElementById('c-email').value,
+        phone:     document.getElementById('c-phone').value,
+        role:      document.getElementById('c-role').value,
+        message:   document.getElementById('c-msg').value
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('contact-success').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => document.getElementById('contact-success').style.display = 'none', 5000);
+    } else { throw new Error(); }
+  } catch { document.getElementById('contact-error').style.display = 'block'; }
+  btn.disabled = false; btn.textContent = 'Send Enquiry →';
+}
+
+// ─── Booking form ─────────────────────────────────────────
+async function submitBooking(e) {
+  e.preventDefault();
+  const btn = document.getElementById('b-btn');
+  btn.disabled = true; btn.textContent = 'Confirming...';
+  document.getElementById('booking-error').style.display = 'none';
+  try {
+    const res = await fetch('/api/booking', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: document.getElementById('b-fname').value,
+        lastName:  document.getElementById('b-lname').value,
+        email:     document.getElementById('b-email').value,
+        phone:     document.getElementById('b-phone').value,
+        date:      document.getElementById('b-date').value,
+        time:      document.getElementById('b-time').value,
+        format:    document.getElementById('b-format').value,
+        service:   document.getElementById('b-service').value
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('booking-success').style.display = 'block';
+      e.target.reset();
+      setTimeout(() => document.getElementById('booking-success').style.display = 'none', 5000);
+    } else { throw new Error(); }
+  } catch { document.getElementById('booking-error').style.display = 'block'; }
+  btn.disabled = false; btn.textContent = 'Confirm Booking →';
+}
+
+// ─── Chatbot ──────────────────────────────────────────────
+let chatHistory = [];
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addMessage(text, 'user');
+  await getBotResponse(text);
+}
+
+async function askQuestion(q) {
+  addMessage(q, 'user');
+  await getBotResponse(q);
+}
+
+function addMessage(text, role) {
+  const msgs = document.getElementById('messages');
+  const div = document.createElement('div');
+  div.className = 'msg msg-' + (role === 'user' ? 'user' : 'bot');
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping(show) {
+  document.getElementById('typing').style.display = show ? 'block' : 'none';
+  if (show) document.getElementById('messages').scrollTop = 9999;
+}
+
+async function getBotResponse(userMsg) {
+  showTyping(true);
+  chatHistory.push({ role: 'user', content: userMsg });
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chatHistory })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error);
+    chatHistory.push({ role: 'assistant', content: data.reply });
+    showTyping(false);
+    addMessage(data.reply, 'bot');
+  } catch (err) {
+    showTyping(false);
+    addMessage("I'm having trouble connecting right now. Please call us or use the contact form — our team is happy to help! 😊", 'bot');
+  }
+}
+</script>
+</body>
+</html>
