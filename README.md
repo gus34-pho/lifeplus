@@ -379,10 +379,7 @@
                         <option value="personal-care">Personal Care</option>
                         <option value="daily-living">Daily Living Support</option>
                         <option value="community">Community Participation</option>
-                        <option value="support-coordination">Support Coordination</option>
                         <option value="transport">Transport Assistance</option>
-                        <option value="respite">Respite Care</option>
-                        <option value="sil">Supported Independent Living (SIL)</option>
                         <option value="other">Other / Not Sure</option>
                       </select>
                       <div class="invalid-feedback">Please select a service.</div>
@@ -460,11 +457,8 @@
             <li><a href="services.html#personal-care">Personal Care</a></li>
             <li><a href="services.html#daily-living">Daily Living Support</a></li>
             <li><a href="services.html#community">Community Participation</a></li>
-            <li><a href="services.html#support-coordination">Support Coordination</a></li>
-            <li><a href="services.html#transport">Transport Assistance</a></li>
-            <li><a href="services.html#respite">Respite Care</a></li>
-            <li><a href="services.html#sil">Supported Independent Living</a></li>
-          </ul>
+            <li><a href="services.html#transport">Transport Assistance</a></li> 
+         </ul>
         </div>
         <div class="col-lg-3">
           <h5>Contact Us</h5>
